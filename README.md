@@ -33,12 +33,63 @@ function (const a) {
 }
 ```
 
+## Interaction with default arguments
+
+Default arguments still function as normal. The immutability happens once the function body begins, and default argument statements are treated as the declaration assignment.
+
+```
+function (const a = 'hello') {
+  const b
+
+  // a is immutable in the same way b is
+  // if `a` was not passed to the function, `a` will be 'hello'
+}
+```
+
+## Interaction with the `arguments` object
+
+Constant function argument make the direct argument references immutable. This does not impact the `arguments` object, in strict or sloppy mode, which hold it's own references and may be mutated as normal.
+
+In sloppy mode, assigning to the arguments object will not update a constant function argument.
+
+## "What about `let` and `var`?"
+
+This proposal only touches what is currently missing. Neither `let` or `var` are necessary as that is already the default behavior.
+
 # Open Questions
 
 Would it be possible to use const function arguments in an arrow function that has just one argument and no parentheses?
 
 ```
 const myFunc = const a => {
+  const b
+
+  // a is immutable in the same way b is
+}
+```
+
+## Potential short-hand options
+
+Is a short-hand version for every function argument to be constant desirable and viable?
+
+```
+function const (a) {
+  const b
+
+  // a is immutable in the same way b is
+}
+```
+
+```
+const (a) => {
+  const b
+
+  // a is immutable in the same way b is
+}
+```
+
+```
+(a) const => {
   const b
 
   // a is immutable in the same way b is
