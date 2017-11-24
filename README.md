@@ -48,7 +48,7 @@ function (const a = 'hello') {
 
 ## Interaction with the `arguments` object
 
-Constant function argument make the direct argument references immutable. This does not impact the `arguments` object, in strict or sloppy mode, which hold it's own references and may be mutated as normal.
+Constant function argument make the direct argument references immutable. This does not impact the `arguments` object, in strict or sloppy mode, which hold its own references and may be mutated as normal.
 
 In sloppy mode, assigning to the arguments object will not update a constant function argument.
 
