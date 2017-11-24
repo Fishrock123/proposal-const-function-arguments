@@ -70,31 +70,7 @@ const myFunc = const a => {
 
 ## Potential short-hand options
 
-Is a short-hand version for every function argument to be constant desirable and viable?
-
-```
-function const (a) {
-  const b
-
-  // a is immutable in the same way b is
-}
-```
-
-```
-const (a) => {
-  const b
-
-  // a is immutable in the same way b is
-}
-```
-
-```
-(a) const => {
-  const b
-
-  // a is immutable in the same way b is
-}
-```
+Is a short-hand version desirable? What could be used that is still clear on its purpose?
 
 # Grammar
 
