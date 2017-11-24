@@ -52,6 +52,18 @@ Constant function argument make the direct argument references immutable. This d
 
 In sloppy mode, assigning to the arguments object will not update a constant function argument.
 
+```
+fn(1)
+
+function fn (const a) {
+  // a is 1
+
+  arguments[0] = 2
+  // a is 1
+  // arguments[0] is 2
+}
+```
+
 ## "What about `let` and `var`?"
 
 This proposal only touches what is currently missing. Neither `let` or `var` are necessary as that is already the default behavior.
