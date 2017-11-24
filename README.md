@@ -56,6 +56,8 @@ In sloppy mode, assigning to the arguments object will not update a constant fun
 
 This proposal only touches what is currently missing. Neither `let` or `var` are necessary as that is already the default behavior.
 
+The proposal has no impact on lexical or function scoping. As arguments are always declared before the function body, the lexical scope is always the function body.
+
 # Open Questions
 
 Would it be possible to use const function arguments in an arrow function that has just one argument and no parentheses?
