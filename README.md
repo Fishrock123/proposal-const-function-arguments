@@ -46,6 +46,35 @@ function (const a = 'hello') {
 }
 ```
 
+Additionally, the following example:
+
+```
+function outer (
+    const a = 'hello',
+    inner = (function inner (a = 'world') {
+      console.log('inner', a)
+    })()
+  ) {
+  console.log('outer', a)
+}
+outer()
+```
+
+Acts in the same way as:
+
+```js
+function outer () {
+  const a = 'hello'
+  function inner (a) {
+    a = 'world'
+    console.log('inner', a)
+  }
+  inner()
+  console.log('outer', a)
+}
+outer()
+```
+
 ## Interaction with the `arguments` object
 
 Constant function argument make the direct argument references immutable. This does not impact the `arguments` object, in strict or sloppy mode, which hold its own references and may be mutated as normal.
