@@ -15,7 +15,7 @@ _For more information see the [TC39 proposal process](https://tc39.github.io/pro
 
 # Proposal
 
-When declaring a function or an arrow function, adding `const` before the argument declaration makes the argument reference immutable, in the same manner as if the argument was a variable declared by the `const` variable declaration keyword. Just like `const` variables, the immutability is only by reference for objects, and does not extend deeply.
+When declaring a function or an arrow function, adding `const` before an argument declaration makes the argument reference immutable, in the same manner as if the argument was a variable declared by the `const` variable declaration keyword. Just like `const` variables, the immutability is only by reference for objects, and does not extend deeply.
 
 ```
 function (const a) {
